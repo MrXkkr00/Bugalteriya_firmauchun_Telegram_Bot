@@ -1,21 +1,19 @@
-import sqlite3
+
 
 from aiogram.dispatcher import FSMContext
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from states.user_state import UserState
 from aiogram import types
-from aiogram.dispatcher.filters.builtin import CommandStart
+
 from data.config import ADMINS
 from loader import db, dp, bot
 
 
 @dp.message_handler(text="/start")
 async def bot_start(message: types.Message):
-    name = message.from_user.full_name
-    # Foydalanuvchini bazaga qo'shamiz
 
-    await message.answer("      Xush kelibsiz!\n📕To'liq Ism Familyangizni kiriting")
+    await message.answer(f"      Xush kelibsiz!\n📕To'liq Ism Familyangizni kiriting")
     await UserState.name.set()
 
 
@@ -26,7 +24,7 @@ async def topshiriq_menu(message: types.Message, state: FSMContext):
         {"name": fullname}
     )
 
-    await message.answer("📕Telefon Raqamingizni kiriting\n📱Masalan 991112233 :")
+    await message.answer("📕 Telefon Raqamingizni kiriting\n📱 (Masalan) : 991112233 ")
     await UserState.nomer.set()
 
 
@@ -60,7 +58,7 @@ async def topshiriq_menu(message: types.Message, state: FSMContext):
         db.update_user_sorov(sorov=topshiriq, id=id)
         db.update_user_nomer(nomer=nomer, id=id)
     else:
-        db.add_user(id=message.from_user.id, name=name, nomer=nomer, sorov=topshiriq,bugalter="null", jarayon="null")
+        db.add_user(id=message.from_user.id, name=name, nomer=nomer, sorov=topshiriq, bugalter="null", jarayon="null")
 
     bugalterlarMenu = InlineKeyboardMarkup(
         inline_keyboard=[
@@ -98,6 +96,7 @@ async def topshiriq_menu(message: types.Message, state: FSMContext):
         one_time_keyboard=True
     )
     user = db.select_user(id=id)
-    await bot.send_message(chat_id=ADMINS[0], text=f"🙋🏻‍♂️Mijoz : {user[1]} \n🗂Topshiq : {user[3]}\n📱Mijoz raqami :  {user[2]}\n")
+    await message.answer(f"Sizning so'rovingiz tez orada ko'rib chiqiladi")
+    await bot.send_message(chat_id=ADMINS[0], text=f"🙋🏻‍♂️Mijoz : {user[1]} \n🗂 Topshiriq : {user[3]}\n📱 Mijoz raqami :  {user[2]}\n")
     await bot.send_message(chat_id=ADMINS[0], text=f"Bug'alterni tanlang", reply_markup=bugalterlarMenu)
     await state.finish()
