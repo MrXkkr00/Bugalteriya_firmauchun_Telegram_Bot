@@ -17,6 +17,9 @@ async def topshiriq_uchun(message: types.Message):
         keyboard=[
             [
                 KeyboardButton(text='Qabul qilingan'),
+                KeyboardButton(text='Qabul qilinmagan'),
+            ],
+            [
                 KeyboardButton(text='Tugagan'),
             ],
         ],
@@ -40,6 +43,14 @@ async def topshiriq_uchun2(message: types.Message):
     for user in users:
         if "tugatildi" in user[5]:
             await message.answer(f"🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}\n🙎🏻‍♂️bajardi : ✅{user[4]}✅")
+
+
+@dp.message_handler(text="Qabul qilinmagan", user_id=ADMINS[0])
+async def topshiriq_uchun3(message: types.Message):
+    users = db.select_all_users()
+    for user in users:
+        if "null" in user[5]:
+            await message.answer(f"🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}\n🙎🏻‍♂Qabul qilinmadi : ✅{user[4]}✅")
 
 
 @dp.callback_query_handler(text_contains="Mohir", user_id=ADMINS[0])
