@@ -62,7 +62,7 @@ async def topshiriq_uchun3(message: types.Message):
 
 
 @dp.callback_query_handler(text_contains="Mohir", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss0(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[5:])
     user = db.select_user(id=uid)
@@ -81,7 +81,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Isomiddin", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss1(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[9:])
     user = db.select_user(id=uid)
@@ -100,7 +100,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Zoxid", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss2(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[5:])
     user = db.select_user(id=uid)
@@ -119,7 +119,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Iroda", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss3(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[5:])
     user = db.select_user(id=uid)
@@ -138,7 +138,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Begzod", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss4(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[6:])
     user = db.select_user(id=uid)
@@ -157,7 +157,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Azim", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss5(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[4:])
     user = db.select_user(id=uid)
@@ -176,7 +176,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Abduraxmon", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss6(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[10:])
     user = db.select_user(id=uid)
@@ -195,7 +195,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Abdulvosit", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss7(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[10:])
     user = db.select_user(id=uid)
@@ -214,7 +214,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Rasul", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss8(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[5:])
     user = db.select_user(id=uid)
@@ -233,7 +233,7 @@ async def answer_boss(message: CallbackQuery):
 
 
 @dp.callback_query_handler(text_contains="Jasur", user_id=ADMINS[0])
-async def answer_boss(message: CallbackQuery):
+async def answer_boss9(message: CallbackQuery):
     data1 = message.data
     uid = int(data1[5:])
     user = db.select_user(id=uid)
