@@ -11,6 +11,14 @@ from data.config import ADMINS
 from loader import db, dp, bot
 
 
+@dp.message_handler(text="/deleteusers", user_id=ADMINS[0])
+async def delete_users(message: types.Message):
+    db.delete_users()
+
+    await message.answer("Baza tozalandi")
+
+
+
 @dp.message_handler(text="/topshiriq", user_id=ADMINS[0])
 async def topshiriq_uchun(message: types.Message):
     boss_xisob = ReplyKeyboardMarkup(
