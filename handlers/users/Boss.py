@@ -11,6 +11,7 @@ from data.config import ADMINS
 from loader import db, dp, bot
 
 
+
 @dp.message_handler(text="/deleteusers", user_id=ADMINS[0])
 async def delete_users(message: types.Message):
     db.delete_users()
@@ -20,7 +21,7 @@ async def delete_users(message: types.Message):
 
 
 @dp.message_handler(text="/topshiriq", user_id=ADMINS[0])
-async def topshiriq_uchun(message: types.Message):
+async def topshiriq_uchun123(message: types.Message):
     boss_xisob = ReplyKeyboardMarkup(
         keyboard=[
             [
@@ -75,7 +76,7 @@ async def answer_boss0(message: CallbackQuery):
         ]
     )
     await message.message.delete()
-    await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Mohirga yuborildi",reply_markup = ReplyKeyboardRemove())
+    await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Mohirga yuborildi")
     await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida1)
 
@@ -95,7 +96,7 @@ async def answer_boss1(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Isomiddinga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[2], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida2)
 
 
@@ -114,7 +115,7 @@ async def answer_boss2(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Zoxidga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[3], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida3)
 
 
@@ -133,7 +134,7 @@ async def answer_boss3(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Irodaga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[4], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida4)
 
 
@@ -152,7 +153,7 @@ async def answer_boss4(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Begzodga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[5], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida5)
 
 
@@ -171,7 +172,7 @@ async def answer_boss5(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Azimga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[6], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida6)
 
 
@@ -190,7 +191,7 @@ async def answer_boss6(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Abduraxmonga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[7], text=f"Yangi topshiriq\n🧑‍💼{user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida7)
 
 
@@ -209,7 +210,7 @@ async def answer_boss7(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq Abdulvositga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼  {user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[8], text=f"Yangi topshiriq\n🧑‍💼  {user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida8)
 
 
@@ -228,7 +229,7 @@ async def answer_boss8(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq bug'alter1ga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼 {user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[9], text=f"Yangi topshiriq\n🧑‍💼 {user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida9)
 
 
@@ -247,5 +248,5 @@ async def answer_boss9(message: CallbackQuery):
     )
     await message.message.delete()
     await bot.send_message(chat_id=ADMINS[0], text=f"Topshiq bug'alter2ga yuborildi")
-    await bot.send_message(chat_id=ADMINS[1], text=f"Yangi topshiriq\n🧑‍💼 {user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
+    await bot.send_message(chat_id=ADMINS[10], text=f"Yangi topshiriq\n🧑‍💼 {user[1]} tomindan \n🗂Topshiriq : {user[3]}\n📱Mijoz raqami : {user[2]}",
                            reply_markup=qabul_haqida10)

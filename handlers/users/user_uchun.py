@@ -18,7 +18,7 @@ async def bot_start(message: types.Message):
 
 
 @dp.message_handler(state=UserState.name)
-async def topshiriq_menu(message: types.Message, state: FSMContext):
+async def topshiriq_menu111(message: types.Message, state: FSMContext):
     fullname = message.text
     await state.update_data(
         {"name": fullname}
@@ -35,12 +35,12 @@ async def nomer_menu(message: types.Message, state: FSMContext):
         {"nomer": nomer}
     )
 
-    await message.answer("Bug'alteriya borasida \nBizdan qanaday yordam kerak")
+    await message.answer("SMGROUP ga hush kelibsiz\nBug'alteriya borasida \nBizdan qanday yordam kerak")
     await UserState.topshiriq.set()
 
 
 @dp.message_handler(state=UserState.topshiriq)
-async def topshiriq_menu(message: types.Message, state: FSMContext):
+async def topshiriq_menu1111(message: types.Message, state: FSMContext):
     topshiriq = message.text
     await state.update_data(
         {"topshiriq": topshiriq}
@@ -60,7 +60,7 @@ async def topshiriq_menu(message: types.Message, state: FSMContext):
     else:
         db.add_user(id=message.from_user.id, name=name, nomer=nomer, sorov=topshiriq, bugalter="null", jarayon="null")
 
-    bugalterlarMenu = InlineKeyboardMarkup(
+    bugalterlarMenu1 = InlineKeyboardMarkup(
         inline_keyboard=[
             [
                 InlineKeyboardButton(text='👨‍💻Mohir', callback_data=f"Mohir{id}")
@@ -98,5 +98,5 @@ async def topshiriq_menu(message: types.Message, state: FSMContext):
     user = db.select_user(id=id)
     await message.answer(f"Sizning so'rovingiz tez orada ko'rib chiqiladi")
     await bot.send_message(chat_id=ADMINS[0], text=f"🙋🏻‍♂️Mijoz : {user[1]} \n🗂 Topshiriq : {user[3]}\n📱 Mijoz raqami :  {user[2]}\n")
-    await bot.send_message(chat_id=ADMINS[0], text=f"Bug'alterni tanlang", reply_markup=bugalterlarMenu)
+    await bot.send_message(chat_id=ADMINS[0], text=f"Bug'alterni tanlang", reply_markup=bugalterlarMenu1)
     await state.finish()
