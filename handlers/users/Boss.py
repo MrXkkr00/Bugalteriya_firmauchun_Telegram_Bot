@@ -1,3 +1,4 @@
+import asyncio
 import sqlite3
 
 from aiogram.dispatcher import FSMContext
@@ -10,6 +11,16 @@ from aiogram.dispatcher.filters.builtin import CommandStart
 from data.config import ADMINS
 from loader import db, dp, bot
 
+
+@dp.message_handler(text_contains="/rek", user_id=ADMINS)
+async def send_ad_to_all(message: types.Message):
+    users = db.select_all_users()
+    data123 = message.text
+    mes = int(data123[4:])
+    for user in users:
+        user_id = user[0]
+        await bot.send_message(chat_id=user_id, text=mes)
+        await asyncio.sleep(0.05)
 
 
 @dp.message_handler(text="/deleteusers", user_id=ADMINS[0])
